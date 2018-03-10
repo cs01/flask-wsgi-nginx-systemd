@@ -1,0 +1,11 @@
+[Unit]
+Description=
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/example/
+ExecStart=/home/user/.virtualenvs/example/bin/uwsgi --ini wsgi.ini
+
+[Install]
+WantedBy=multi-user.target
